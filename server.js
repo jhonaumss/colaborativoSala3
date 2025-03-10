@@ -15,7 +15,10 @@ app.use(express.json());
 let usuarios = [
   { id: 1, nombre: 'Juan', edad: 28 },
   { id: 2, nombre: 'Ana', edad: 22 },
-  { id: 3, nombre: 'Luis', edad: 35 }
+  { id: 3, nombre: 'Luis', edad: 35 },
+  { id: 4, nombre: 'Jhonatan', edad: 30 },
+  { id: 5, nombre: 'Javier', edad: 30 },
+  { id: 6, nombre: 'Jorge', edad: 28 }
 ];
 // Endpoint Inicial
 
