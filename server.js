@@ -18,7 +18,8 @@ let usuarios = [
   { id: 3, nombre: 'Luis', edad: 35 },
   { id: 4, nombre: 'Jhonatan', edad: 30 },
   { id: 5, nombre: 'Javier', edad: 30 },
-  { id: 6, nombre: 'Jorge', edad: 28 }
+  { id: 6, nombre: 'Jorge', edad: 28 },
+  { id: 7, nombre: 'Pepe', edad: 32 }
 ];
 // Endpoint Inicial
 
