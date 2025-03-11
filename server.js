@@ -12,6 +12,7 @@ const app = express();
 app.use(express.json());
 
 // Datos de prueba: un arreglo de objetos
+// fueron agregados los miembros de la sala y usuarios adicionales
 let usuarios = [
   { id: 1, nombre: 'Juan', edad: 28 },
   { id: 2, nombre: 'Ana', edad: 22 },
@@ -22,20 +23,18 @@ let usuarios = [
   { id: 7, nombre: 'Pepe', edad: 32 },
   { id: 8, nombre: 'Gerardo', edad: 29 }
 ];
-// Endpoint Inicial
 
+// Endpoint Inicial que muestra el mensaje de bienvenida
 app.get('/', (req, res) => {
     res.send('Bienvenido a la API REST con Express.js');
   });
 
-// Endpoint: Obtener todos los usuarios
-
+// Endpoint: Obtener todos los usuarios de la lista usuario
 app.get('/api/usuarios', (req, res) => {
   res.status(200).json(usuarios);
 });
 
 // Endpoint: Obtener un usuario por ID
-
 app.get('/api/usuarios/:id', (req, res) => {
     const usuarioId = parseInt(req.params.id);
   const usuario = usuarios.find(u => u.id === usuarioId);
@@ -44,7 +43,6 @@ app.get('/api/usuarios/:id', (req, res) => {
 });
 
 // Endpoint: Crear un nuevo usuario
-
 app.post('/api/usuarios', (req, res) => {
   const { nombre, edad } = req.body;
   const nuevoUsuario = {
@@ -57,7 +55,6 @@ app.post('/api/usuarios', (req, res) => {
 });
 
 // Endpoint: Actualizar un usuario
-
 app.put('/api/usuarios/:id', (req, res) => {
   const usuario = usuarios.find(u => u.id === parseInt(req.params.id));
   if (!usuario) return res.status(404).send('Usuario no encontrado');
@@ -70,7 +67,6 @@ app.put('/api/usuarios/:id', (req, res) => {
 });
 
 // Endpoint: Eliminar un usuario
-
 app.delete('/api/usuarios/:id', (req, res) => {
   const usuarioIndex = usuarios.findIndex(u => u.id === parseInt(req.params.id));
   if (usuarioIndex === -1) return res.status(404).send('Usuario no encontrado');
